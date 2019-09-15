@@ -15,11 +15,11 @@ public class Main : MonoBehaviour
     public double y3;
     public double y4;
     public double y5;
-    public int x1;
-    public int x2;
-    public int x3;
-    public int x4;
-    public int x5;
+    public double x1;
+    public double x2;
+    public double x3;
+    public double x4;
+    public double x5;
 
     //carga, masa y velocidad inicial
     public double masa;
@@ -27,11 +27,11 @@ public class Main : MonoBehaviour
     public double veIn;
 
     //resultados
-     double ve1;
-     double ve2;
-     double ve3;
-     double ve4;
-     double veFi;
+    public double ve1;
+    public double ve2;
+    public double ve3;
+    public double ve4;
+    public double veFi;
 
     private Vector3 start;
     private Vector3 holi;
@@ -42,12 +42,13 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         start = transform.position;
-        ve1 = Math.Sqrt((y1 * 2) / masa);
-        ve2 = Math.Sqrt((y2 * 2) / masa);
-        ve3 = Math.Sqrt((y3 * 2) / masa);
-        ve4 = Math.Sqrt((y4 * 2) / masa);
-        veFi = Math.Sqrt((y5 * 2) / masa);
+        ve1 = Math.Sqrt(((y1 + (0.5 * masa * veIn * veIn) - y2) * 2)/masa);
+        ve2 = Math.Sqrt(((y2 + (0.5 * masa * ve1 * ve1) - y3) * 2) / masa);
+        ve3 = Math.Sqrt(((y3 + (0.5 * masa * ve2 * ve2) - y4) * 2) / masa);
+        ve4 = Math.Sqrt(((y4 + (0.5 * masa * ve3 * ve3) - y5) * 2) / masa);
+        veFi = Math.Sqrt(((y5 + (0.5 * masa * ve4 * ve4)) * 2) / masa);
 
     }
 
@@ -63,19 +64,19 @@ public class Main : MonoBehaviour
         {
             transform.position = start + new Vector3(vel1 * Time.time, 0, 0);
             distancia = distancia + 0.05;
-            holi = transform.position;
+            holi = this.transform.position;
         }
         else if (distancia > x1 && distancia <= x2)
         {
             transform.position = holi + new Vector3(vel2 * Time.time, 0, 0);
             distancia = distancia + 0.05;
-            holi1 = transform.position;
+            holi1 = this.transform.position;
         }
         else if (distancia > x2 && distancia <= x3)
         {
             transform.position = holi1 + new Vector3(vel3 * Time.time, 0, 0);
             distancia = distancia + 0.05;
-            holi2 = transform.position;
+            holi2 = this.transform.position;
         }
         else if (distancia > x3 && distancia <= x4)
         {

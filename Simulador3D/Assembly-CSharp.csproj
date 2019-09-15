@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\codigo\Camara.cs" />
     <Compile Include="Assets\codigo\Main.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Abril's PC/Desktop/Proyecto1_Fisica3/Simulador3D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
