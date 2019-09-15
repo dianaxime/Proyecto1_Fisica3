@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac246320e8bb334085855e52b2988fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  y1: 1.2
+  y1: 0.5
   x1: 0
   y2: 0
   x2: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   x4: 0
   y5: 0
   x5: 0
-  masa: 0.05
+  masa: 0.005
   carga: 4
   veIn: 0
   ve1: 0
