@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class Main : MonoBehaviour
     //carga, masa y velocidad inicial
     public double masa;
     public double carga;
-    public double veIn = 10.15;
+    public double veIn;
 
     //resultados
     public double ve1;
@@ -33,8 +34,9 @@ public class Main : MonoBehaviour
     void Start()
     {
         start = transform.position;
+        ve1 = Math.Sqrt((y1 * 2) / masa);
 
-        // de variables
+        //inicializacion de variables
         y1 = 2.2;
         x1 = 0.04;
         //***
@@ -50,21 +52,25 @@ public class Main : MonoBehaviour
         y5 = 0.2;
         x5 = 0.20;
         //***
-        masa = 0.00005;
-        carga = 3;
+       
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float veloci = (float)veIn;
-        transform.position = start + new Vector3(veloci * Time.time, 0, 0);
+       
+        float ve = (float)ve1;
+        transform.position = start + new Vector3(ve * Time.time, 0, 0);
     }
 
     // metodo para calcular la velocidad
     void velocidad()
     {
-
+        ve1 = Math.Sqrt((y1 * 2) / masa);
+        ve2 = Math.Sqrt((y2 * 2) / masa);
+        ve3 = Math.Sqrt((y3 * 2) / masa);
+        ve4 = Math.Sqrt((y4 * 2) / masa);
+        veFi = Math.Sqrt((y5 * 2) / masa);
     }
 }
