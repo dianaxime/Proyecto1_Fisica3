@@ -20,11 +20,11 @@ public class Main : MonoBehaviour
     public double veIn;
 
     //resultados
-    public double ve1;
-    public double ve2;
-    public double ve3;
-    public double ve4;
-    public double veFi;
+     double ve1;
+     double ve2;
+     double ve3;
+     double ve4;
+     double veFi;
 
     private Vector3 start;
 
@@ -43,8 +43,42 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int distancia = 0;
+        float vel1 = (float)ve1;
+        float vel2 = (float)ve2;
+        float vel3 = (float)ve3;
+        float vel4 = (float)ve4;
+        float vel5 = (float)veFi;
+        if (distancia <= x1)
+        {
+            transform.position = start + new Vector3(vel1, 0, 0);
+            distancia = distancia + 1;
+        }
+        else if (distancia > x1 && distancia <= x2)
+        {
+            transform.position = start + new Vector3(vel2, 0, 0);
+            distancia = distancia + 1;
+        }
+        else if (distancia > x2 && distancia <= x3)
+        {
+            transform.position = start + new Vector3(vel3 * Time.deltaTime, 0, 0);
+            distancia = distancia + 1;
+        }
+        else if (distancia > x3 && distancia <= x4)
+        {
+            transform.position = start + new Vector3(vel4 * Time.deltaTime, 0, 0);
+            distancia = distancia + 1;
+        }
+        else if (distancia > x4 && distancia <= x5)
+        {
+            transform.position = start + new Vector3(vel5 * Time.time, 0, 0);
+            distancia = distancia + 1;
+        }
+       /* else if (distancia > x5)
+        {
+            //termina la simulacion
 
-        float ve = (float)ve1;
-        transform.position = start + new Vector3(ve * Time.time, 0, 0);
+        }*/
+
     }
 }
