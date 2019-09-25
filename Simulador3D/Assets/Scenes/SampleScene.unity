@@ -340,24 +340,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distancia: 0
-  y1: 2.5
-  y2: 2
-  y3: 1.5
+  y1: 4
+  y2: 1
+  y3: 0
   y4: 1
-  y5: 0.5
-  x1: 5
-  x2: 10
-  x3: 15
-  x4: 20
-  x5: 25
-  masa: 5
-  carga: 4
-  veIn: 0.5
+  y5: 4
+  x1: -2
+  x2: 1
+  x3: 0
+  x4: 1
+  x5: 2
+  masa: 0.05
+  carga: 1.67
+  veIn: 0.25
+  grafica: 1
   ve1: 0
   ve2: 0
   ve3: 0
   ve4: 0
   veFi: 0
+  po1: 0
+  po2: 0
+  po3: 0
+  po4: 0
+  po5: 0
 --- !u!135 &1889671944
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -424,7 +430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889671942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.6, y: 0.68, z: 1.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4066761, y: 0.44198227, z: 0.3734235}
   m_Children: []
   m_Father: {fileID: 0}

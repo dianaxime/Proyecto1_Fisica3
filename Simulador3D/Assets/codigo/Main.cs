@@ -25,6 +25,11 @@ public class Main : MonoBehaviour
     public double masa;
     public double carga;
     public double veIn;
+    public int grafica;
+    private Vector3 start;
+    private Vector3 posis1;
+    private Vector3 posis2;
+
 
     //resultados
     public double ve1;
@@ -32,68 +37,106 @@ public class Main : MonoBehaviour
     public double ve3;
     public double ve4;
     public double veFi;
+    public float po1;
+    public float po2;
+    public float po3;
+    public float po4;
+    public float po5;
 
-    private Vector3 start;
-    private Vector3 holi;
-    private Vector3 holi1;
-    private Vector3 holi2;
-    private Vector3 holi3;
+   public float vel1;
+   public float vel2 ;
+   public float vel3 ;
+   public float vel4 ;
+   public float vel5 ;
+   public float xx1 ;
+   public float xx2;
+   public float xx3;
+   public float xx4;
+   public float xx5;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Posicion inicial de la particula
         start = transform.position;
-        ve1 = Math.Sqrt(((y1 + (0.5 * masa * veIn * veIn) - y2) * 2)/masa);
-        ve2 = Math.Sqrt(((y2 + (0.5 * masa * ve1 * ve1) - y3) * 2) / masa);
-        ve3 = Math.Sqrt(((y3 + (0.5 * masa * ve2 * ve2) - y4) * 2) / masa);
-        ve4 = Math.Sqrt(((y4 + (0.5 * masa * ve3 * ve3) - y5) * 2) / masa);
-        veFi = Math.Sqrt(((y5 + (0.5 * masa * ve4 * ve4)) * 2) / masa);
+        posis1 = new Vector3(xx1, 0, 0);
+        // Velociades 
+        ve1 = Math.Sqrt(((2 * carga * Math.Abs(y1 - y2))/ masa) + (veIn * veIn));
+        ve2 = Math.Sqrt(((2 * carga * Math.Abs(y2 - y3)) / masa) + (ve1 * ve1));
+        ve3 = Math.Sqrt(((2 * carga * Math.Abs(y3 - y4)) / masa) + (ve2 * ve2));
+        ve4 = Math.Sqrt(((2 * carga * Math.Abs(y4 - y5)) / masa) + (ve3 * ve3));
+        veFi = Math.Sqrt(((2 * carga * y5) / masa) + (ve4 * ve4));
+
+        //posiciones
+        
+
+        
+        // posiciones
+        /*tiempo = 1;
+        po1 = (float)ve1 * tiempo;
+        tiempo = 2;
+        po2 = (float)ve2 * tiempo;
+        tiempo = 3;
+        po3 = (float)ve3 * tiempo;
+        tiempo = 4;
+        po4 = (float)ve4 * tiempo;
+        tiempo = 5;
+        po5 = (float)veFi * tiempo;*/
+
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float vel1 = (float)ve1;
-        float vel2 = (float)ve2;
-        float vel3 = (float)ve3;
-        float vel4 = (float)ve4;
-        float vel5 = (float)veFi;
-        if (distancia <= x1)
-        {
-            transform.position = start + new Vector3(vel1 * Time.time, 0, 0);
-            distancia = distancia + 0.05;
-            holi = this.transform.position;
-        }
-        else if (distancia > x1 && distancia <= x2)
-        {
-            transform.position = holi + new Vector3(vel2 * Time.time, 0, 0);
-            distancia = distancia + 0.05;
-            holi1 = this.transform.position;
-        }
-        else if (distancia > x2 && distancia <= x3)
-        {
-            transform.position = holi1 + new Vector3(vel3 * Time.time, 0, 0);
-            distancia = distancia + 0.05;
-            holi2 = this.transform.position;
-        }
-        else if (distancia > x3 && distancia <= x4)
-        {
-            transform.position = holi2 + new Vector3(vel4 * Time.time, 0, 0);
-            distancia = distancia + 0.05;
-            holi3 = transform.position;
-        }
-        else if (distancia > x4 && distancia <= x5)
-        {
-            transform.position = holi3 + new Vector3(vel5 * Time.time, 0, 0);
-            distancia = distancia + 0.05;
-        }
-       /* else if (distancia > x5)
-        {
-            //termina la simulacion
+         vel1 = (float)ve1;
+         vel2 = (float)ve2;
+         vel3 = (float)ve3;
+         vel4 = (float)ve4;
+         vel5 = (float)veFi;
+         xx1 = (float)x1;
+         xx2 = (float)x2;
+         xx3 = (float)x3;
+         xx4 = (float)x4;
+         xx5 = (float)x5;
+        transform.position = start + new Vector3(xx1 , 0, 0).normalized * vel1 * Time.time;
 
-        }*/
-
+        /*transform.position = start + new Vector3(po1/100, 0, 0);
+        transform.position = new Vector3(po1/100, 0, 0) + new Vector3(po2, 0, 0);
+        transform.position = new Vector3(po2/100, 0, 0) + new Vector3(po3, 0, 0);
+        transform.position = new Vector3(po3/100, 0, 0) + new Vector3(po4, 0, 0);
+        transform.position = new Vector3(po4, 0, 0) + new Vector3(po5, 0, 0);*/
+        /* if (distancia <= x1)
+         {
+             transform.position = start + new Vector3(vel1 * Time.time, 0, 0);
+             distancia = distancia + 0.05;
+             holi = this.transform.position;
+         }
+         else if (distancia > x1 && distancia <= x2)
+         {
+             transform.position = new Vector3(vel2 * Time.time, 0, 0);
+             distancia = distancia + 0.05;
+             holi1 = this.transform.position;
+         }
+         else if (distancia > x2 && distancia <= x3)
+         {
+             transform.position =  new Vector3(vel3 * Time.time, 0, 0);
+             distancia = distancia + 0.05;
+             holi2 = this.transform.position;
+         }
+         else if (distancia > x3 && distancia <= x4)
+         {
+             transform.position =  new Vector3(vel4 * Time.time, 0, 0);
+             distancia = distancia + 0.05;
+             holi3 = transform.position;
+         }
+         else if (distancia > x4 && distancia <= x5)
+         {
+             transform.position = new Vector3(vel5 * Time.time, 0, 0);
+             distancia = distancia + 0.05;
+         }*/
     }
 }
