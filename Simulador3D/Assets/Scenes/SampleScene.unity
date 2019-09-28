@@ -432,12 +432,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energiaI: 0
-  masa: 2
+  masa: 5
   carga: 1
-  veIn: 25
+  veIn: 50
   veFi: 0
   po1x: 0
-  po1y: 0
   time: 0
 --- !u!135 &1889671944
 SphereCollider:
