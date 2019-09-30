@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energiaI: 0
-  masa: 5
+  masa: 1
   carga: 1
   veIn: 50
   veFi: 0
